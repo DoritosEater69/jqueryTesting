@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        .underlay {
+            position: relative;
+        }
+
+        .underlay:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body style="background-image: url(gfx/19858.jpg); background-position: center; background-size: cover;">
+
+
+    <div class="container-fluid" style="overflow-x: hidden;" id="#partOne">
+        <div class="row">
+            <div class="col-6 p-0 m-0 d-flex align-items-center" id="red" style="background-color: red; height: 950px; opacity: 0.5;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="textStartR mx-auto" style="display: block;">
+                                <h1 style="font-size: 80px; color: white;">Shrink</h1>
+                                <hr style="width: 100%; background-color: white; height: 3px; color: white;">
+                                <p style="color: white;">This content is visible when the mouse clicks up the Red Div.</p>
+                            </div>
+                            <div class="textWrapRed text-white" style="display: none;">
+                                <h1 style="font-size: 80px;">Shrink</h1>
+                                <hr style="width: 100%; background-color: white; height: 3px;">
+                                <p style="color: white;">This content is visible when the mouse clicks down the Red Div.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 p-0 m-0 d-flex align-items-center" style="background-color: blue; height: 950px; opacity: 0.5; position: relative;">
+                <div class="container-fluid justify-content-center d-flex align-items-center" id="blue" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 100;">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="textStartB" style="display: block;">
+                                <h1 style="font-size: 80px; color: white;">Page scroll</h1>
+                                <hr style="width: 100%; background-color: white; height: 3px; color: white;">
+                                <p style=" color: white;">This content is visible when the mouse leaves the Blue Div.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="textWrapBlue" style="display: none;">
+                                <h1 style="font-size: 80px; color: white;">Page scrolled</h1>
+                                <hr style="width: 100%; background-color: white; height: 3px; color: white;">
+                                <p style=" color: white;">This content is visible when the Blue Div scrolls away.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="overflow-x: hidden;" id="#partTwo">
+        <div class="row">
+
+            <div class="col-6 p-0 m-0 " style="height: 950px; opacity: 0.5; position: relative;">
+                <div class="container-fluid justify-content-center d-flex align-items-center" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; background-color: yellow; z-index: 100;" id="yellow">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="textStartY mx-auto p-5" style="display: block; border: 5px solid black !important;">
+                                <h1 style="font-size: 80px;  color: black;">Move to Small</h1>
+                                <hr style="width: 100%; background-color: black !important; height: 3px; color: black;">
+                                <p style="color: black;">This content is visible when the mouse clicks up the Yellow Div.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid pb-5" style="position: absolute; height: 100%; width: 100%; background-color: red;">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="textWrapYellow text-white mb-5" style="display: none;">
+                                <h1 class="pb-5">This is visible when the Yellow Box shrinks</h1>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                                <h3>This text lays over the whole Red Part.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 p-0 m-0 d-flex align-items-center" id="orange" style="background-color: orange; height: 950px; opacity: 0.5;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="textStartO p-5 " style="display: block; border: 5px solid black !important;">
+                                <h1 style="font-size: 80px; color: black;"></h1>
+                                <hr style="width: 100%; background-color: black; height: 3px; color: white;">
+                                <p style=" color: black;">This content is visible when the mouse leaves the Blue Div.</p>
+                            </div>
+                            <div class="textWrapOrange text-white" style="display: none;">
+                                <h1 style="font-size: 80px;">Shrink</h1>
+                                <hr style="width: 100%; background-color: white; height: 3px;">
+                                <p style="color: black;">This content is visible when the mouse enters the Blue Div.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
