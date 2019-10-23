@@ -22,19 +22,44 @@
             width: 100%;
             height: 100%;
         }
+
+        .rowStickyFix{
+            margin-right: 0px !important; 
+            margin-left: 0px !important;    
+        }
+        
+        .stickyAdd {
+            padding-top: 90px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 99999;
+        }
+
+        .verticalScroll {
+            overflow-y: scroll;
+            overflow: hidden;
+        }
+
+        .noSpace {
+
+            margin-left: 0;
+            margin-right: 0;
+        }
     </style>
 
     <title>Hello, world!</title>
 </head>
 
-<body style="background-image: url(gfx/19858.jpg); background-position: center; background-size: cover;">
+<body style="background-image: url(gfx/19858.jpg); background-position: center; background-size: cover;  background-attachment: fixed;">
 
 
-    <div class="container-fluid" style="overflow-x: hidden;" id="#partOne">
-        <div class="row">
-            <div class="col-6 p-0 m-0 d-flex align-items-center" id="red" style="background-color: red; height: 950px; opacity: 0.5;">
+    <div class="container-fluid noSpace" style="overflow-x: hidden;" id="#partOne">
+        <div class="row rowStickyFix noSpace">
+            <div class="col-12 col-md-6 p-0 m-0 d-flex align-items-center" id="red" style="background-color: red; height: 950px; opacity: 0.5;">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row rowStickyFix">
                         <div class="col-12 d-flex justify-content-center">
                             <div class="textStartR mx-auto" style="display: block;">
                                 <h1 style="font-size: 80px; color: white;">Shrink</h1>
@@ -51,9 +76,9 @@
                 </div>
             </div>
 
-            <div class="col-6 p-0 m-0 d-flex align-items-center" style="background-color: blue; height: 950px; opacity: 0.5; position: relative;">
+            <div class="col-12 col-md-6 p-0 m-0 d-flex align-items-center" style="background-color: blue; height: 950px; opacity: 0.5; position: relative;">
                 <div class="container-fluid justify-content-center d-flex align-items-center" id="blue" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 100;">
-                    <div class="row">
+                    <div class="row rowStickyFix noSpace">
                         <div class="col-12 d-flex justify-content-center">
                             <div class="textStartB" style="display: block;">
                                 <h1 style="font-size: 80px; color: white;">Page scroll</h1>
@@ -63,9 +88,9 @@
                         </div>
                     </div>
                 </div>
-                    <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12 d-flex justify-content-center">
+                <div class="container-fluid noSpace">
+                    <div class="row rowStickyFix noSpace">
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
                             <div class="textWrapBlue" style="display: none;">
                                 <h1 style="font-size: 80px; color: white;">Page scrolled</h1>
                                 <hr style="width: 100%; background-color: white; height: 3px; color: white;">
@@ -78,12 +103,11 @@
         </div>
     </div>
 
-    <div class="container-fluid" style="overflow-x: hidden;" id="#partTwo">
-        <div class="row">
-
-            <div class="col-6 p-0 m-0 " style="height: 950px; opacity: 0.5; position: relative;">
+    <div class="container-fluid noSpace" style="overflow-x: hidden;" id="#partTwo">
+        <div class="row rowStickyFix noSpace">
+            <div class="col-12 col-md-6 p-0 m-0 " style="height: 950px; opacity: 0.5; position: relative;">
                 <div class="container-fluid justify-content-center d-flex align-items-center" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; background-color: yellow; z-index: 100;" id="yellow">
-                    <div class="row">
+                    <div class="row rowStickyFix">
                         <div class="col-12">
                             <div class="textStartY mx-auto p-5" style="display: block; border: 5px solid black !important;">
                                 <h1 style="font-size: 80px;  color: black;">Move to Small</h1>
@@ -93,8 +117,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid pb-5" style="position: absolute; height: 100%; width: 100%; background-color: red;">
-                    <div class="row">
+                <div class="container-fluid pb-5 noSpace" style="position: absolute; height: 100%; width: 100%; background-color: red;">
+                    <div class="row rowStickyFix">
                         <div class="col-12">
                             <div class="textWrapYellow text-white mb-5" style="display: none;">
                                 <h1 class="pb-5">This is visible when the Yellow Box shrinks</h1>
@@ -120,19 +144,25 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 p-0 m-0 d-flex align-items-center" id="orange" style="background-color: orange; height: 950px; opacity: 0.5;">
-                <div class="container-fluid">
-                    <div class="row">
+            <div class="col-12 col-md-6 p-0 m-0 d-flex align-items-center" style="background-color: orange; height: 950px; opacity: 1.0; z-index: 1000;  position: relative;">
+                <div class="container-fluid noSpace justify-content-center d-flex align-items-center" id="orange" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 100;">
+                    <div class="row rowStickyFix noSpace">
                         <div class="col-12 d-flex justify-content-center">
-                            <div class="textStartO p-5 " style="display: block; border: 5px solid black !important;">
-                                <h1 style="font-size: 80px; color: black;"></h1>
+                            <div class="textStartO px-3" style="display: block; border: 5px solid black !important; overflow: hidden">
+                                <h1 style="font-size: 80px; color: black;">Headline</h1>
                                 <hr style="width: 100%; background-color: black; height: 3px; color: white;">
-                                <p style=" color: black;">This content is visible when the mouse leaves the Blue Div.</p>
+                                <p style=" color: black;">If you click on this Content - the Border will cut off the Headline and this text.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container noSpace" id="orangeShrink">
+                    <div class="row rowStickyFix noSpace">
+                        <div class="col-12 d-flex justify-content-center">
                             <div class="textWrapOrange text-white" style="display: none;">
-                                <h1 style="font-size: 80px;">Shrink</h1>
+                                <h1 style="font-size: 20px; text-center">This is visible after the Animation</h1>
                                 <hr style="width: 100%; background-color: white; height: 3px;">
-                                <p style="color: black;">This content is visible when the mouse enters the Blue Div.</p>
+                                <p style="color: black;"></p>
                             </div>
                         </div>
                     </div>
@@ -140,6 +170,86 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid pb-5 noSpace" style="position: absolute; height: 100%; width: 100%; background-color: red; z-index: -4;">
+        <div class="row rowStickyFix">
+            <div class="col-12">
+                <div class=" text-white mb-5" style="display: none;">
+                    <h1 class="pb-5">This is visible when the Yellow Box shrinks</h1>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                    <h3>This text lays over the whole Red Part.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid noSpace px-0">
+        <div class="row rowStickyFix" style="height: 232px;">
+            <div class="col-12 py-5 text-center rowStickyFix" style="background-color: white;" id="stickyDiv">
+                <h1>This is a Testing Headline</h1>
+                <p>This DIV has a white background and lays in front of the Background-Image.</p>
+                <p><b>If the Top of your Browser "touches" the Top-Part of this Part, something will happen.</b></p>
+            </div>
+        </div>
+
+        <div id="vertScroll">
+            <div class="row noSpace">
+                <div class="col-12 text-center d-flex justify-content-center scrollChild" style="background-color: blue; color: white; height: 900px">
+                    <div class="my-auto py-5">
+                        <h1>First</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row noSpace">
+                <div class="col-12 text-center d-flex justify-content-center scrollChild" style="background-color: blue; color: white; height: 900px">
+                    <div class="my-auto">
+                        <h1>Second</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row noSpace">
+                <div class="col-12 text-center d-flex justify-content-center scrollChild" style="background-color: blue; color: white; height: 900px">
+                    <div class="my-auto">
+                        <h1>Third</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row noSpace">
+                <div class="col-12 text-center d-flex justify-content-center scrollChild" style="background-color: blue; color: white; height: 900px">
+                    <div class="my-auto">
+                        <h1>Fourth</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row noSpace">
+                <div class="col-12 text-center d-flex justify-content-center scrollChild" style="background-color: blue; color: white; height: 900px">
+                    <div class="my-auto">
+                        <h1>Fifth</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Optional JavaScript -->

@@ -11,8 +11,39 @@ $(document).ready(function () {
     var orange = $("#orange");
     var wrapY = $(".textWrapYellow");
     var wrapO = $(".textWrapOrange");
+    var oShrink = $("#orangeShrink");
     var startTxtY = $(".textStartY");
     var startTxtO = $(".textStartO");
+
+    var scrollChild = $(".scrollChild");
+    var scrollChild2 = $(".scrollChild2");
+    var verticalScroll = document.getElementById("vertScroll");
+
+    var stickyDiv = document.getElementById("stickyDiv");
+    var topOffset = stickyDiv.offsetTop;
+    scrollChild.stop();
+
+
+    window.onscroll = function addSticky() {
+        if (window.pageYOffset >= topOffset) {
+            stickyDiv.classList.add("stickyAdd");
+            scrollChild.stop().animate({
+                height: '250px',
+                opacity: 0.8,
+                margin: "0px",
+            }, "fast");
+            verticalScroll.classList.add("verticalScroll");
+        }
+        if (window.pageYOffset <= topOffset) {
+            stickyDiv.classList.remove("stickyAdd");
+            scrollChild.stop().animate({
+                height: '900px',
+                opacity: 1.0,
+                margin: "0px",
+            }, "fast");
+            verticalScroll.classList.remove("verticalScroll");
+        }
+    }
 
     red.on({
         "mousedown": function () {
@@ -76,10 +107,32 @@ $(document).ready(function () {
             yellow.animate({
                 height: "300px",
                 opacity: "1.0",
-                marginTop: "40px",
+                top: "0",
                 padding: "60px",
             }, "slow");
             wrapY.delay(600).show(0);
+        },
+    });
+
+    orange.on({
+        "mousedown": function () {
+            orange.animate({
+                height: "300px",
+                top: "0",
+            }, "slow");
+
+            startTxtO.animate({
+                height: "100px",
+                paddingTop: "20px",                
+                top: "0",
+            }, "slow");
+
+            wrapO.delay(160).fadeIn(600);
+
+            oShrink.animate({
+                height: "100px",
+                top: "0",
+            });
         },
     });
 
