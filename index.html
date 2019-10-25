@@ -23,11 +23,11 @@
             height: 100%;
         }
 
-        .rowStickyFix{
-            margin-right: 0px !important; 
-            margin-left: 0px !important;    
+        .rowStickyFix {
+            margin-right: 0px !important;
+            margin-left: 0px !important;
         }
-        
+
         .stickyAdd {
             padding-top: 90px;
             position: fixed;
@@ -43,9 +43,14 @@
         }
 
         .noSpace {
-
+            padding-left: 0;
+            padding-right: 0;
             margin-left: 0;
             margin-right: 0;
+        }
+
+        .hover {
+            background-color: red !important;
         }
     </style>
 
@@ -170,8 +175,8 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid pb-5 noSpace" style="position: absolute; height: 100%; width: 100%; background-color: red; z-index: -4;">
-        <div class="row rowStickyFix">
+    <div class="container-fluid pb-5 noSpace" style="position: absolute; height: 100%; width: 100%; z-index: -4;">
+        <div class="row rowStickyFix" style="background-color: red;">
             <div class="col-12">
                 <div class=" text-white mb-5" style="display: none;">
                     <h1 class="pb-5">This is visible when the Yellow Box shrinks</h1>
@@ -207,13 +212,24 @@
             </div>
         </div>
 
-        <div id="vertScroll">
+        <div id="vertScroll" class="h-100">
             <div class="row noSpace">
-                <div class="col-12 text-center d-flex justify-content-center scrollChild" style="background-color: blue; color: white; height: 900px">
+                <div class="col-12 text-center d-flex justify-content-center scrollChild1" style="background-color: blue; color: white; height: 900px;">
+                    <a class="stretched-link" href="#"></a>
                     <div class="my-auto py-5">
                         <h1>First</h1>
                     </div>
                 </div>
+
+                <div class="col-12 py-5 text-center flex-column scrollChildElement" style="background:rgba(255,255,255, 0.4); display: none; position: relative;">
+                    <h1>First slide</h1>
+                    <p>Some Text</p>
+                </div>
+                <div class="col-12 py-5 text-center flex-column" style="background:rgba(255,255,255, 0.9); position: absolute; top: 0;">
+                    <h1>First slide</h1>
+                    <p>Some Text</p>
+                </div>
+
             </div>
 
             <div class="row noSpace">
@@ -246,6 +262,15 @@
                         <h1>Fifth</h1>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid noSpace w-100" style="background-color: white;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Headline</h1>
             </div>
         </div>
     </div>
