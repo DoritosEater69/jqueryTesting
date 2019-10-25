@@ -20,6 +20,8 @@ $(document).ready(function () {
     var scrollChildElement = $(".scrollChildElement");
     var verticalScroll = document.getElementById("vertScroll");
 
+    var overTakeBar = document.getElementById("overTakeFixedBar");
+
     var stickyDiv = document.getElementById("stickyDiv");
     var topOffset = stickyDiv.offsetTop;
     scrollChild.stop();
@@ -27,6 +29,7 @@ $(document).ready(function () {
 
     window.onscroll = function addSticky() {
         if (window.pageYOffset >= topOffset) {
+            overTakeBar.classList.remove("stickyAdd");
             stickyDiv.classList.add("stickyAdd");
             scrollChild.stop().animate({
                 height: '250px',
@@ -73,44 +76,56 @@ $(document).ready(function () {
             scrollChild.css('border-bottom', '0');
             verticalScroll.classList.remove("verticalScroll");
         }
+
+        var test = overTakeBar.offsetTop;
+        if (window.pageYOffset >= test && test >= topOffset) {
+            stickyDiv.classList.remove("stickyAdd");
+            overTakeBar.classList.add("stickyAdd");
+        }
+        if (window.pageYOffset <= test && test <= topOffset) {
+            stickyDiv.classList.add("stickyAdd");
+            overTakeBar.classList.remove("stickyAdd");
+        }
     }
 
     red.on({
         "mousedown": function () {
-            startTxtR.css('display', 'none');
-            red.css('box-shadow', '10px 0px 7px -5px rgba(0,0,0,0.4)');
+        alert("Test");
+        startTxtR.css('display', 'none');
+        red.css('box-shadow', '10px 0px 7px -5px rgba(0,0,0,0.4)');
+        wrapR.css('display', 'block').delay(150);
+        red.animate({
+            opacity: 1.0,
+            height: '600px',
+        });        
 
-            red.animate({
-                opacity: 1.0,
-                height: '600px',
-            });
+        wrapR.animate({
+            opacity: 1.0,
+            fontSize: '66px',
+            color: '#FFFFFF',
+            fontWeight: 'bold',
+        });
+            
+    }, "mouseup": function(){
+        startTxtR.delay(360).show(0);
 
-            wrapR.css('display', 'block').delay(150);
+        red.animate({
+            opacity: 0.5,
+            height: '950px',
+        });
 
-            wrapR.animate({
-                opacity: 1.0,
-                fontSize: '66px',
-                color: '#FFFFFF',
-                fontWeight: 'bold',
-            });
+        wrapR.animate({
+            opacity: 0.0,
+            fontSize: '16px',
+        });
+        startTxtR.delay(200).animate({
+            opacity: 1.0,
+        });
+    
         },
-        "mouseup": function () {
-            startTxtR.delay(360).show(0);
-
-            red.animate({
-                opacity: 0.5,
-                height: '950px',
-            });
-
-            wrapR.animate({
-                opacity: 0.0,
-                fontSize: '16px',
-            });
-            startTxtR.delay(200).animate({
-                opacity: 1.0,
-            });
-        },
+        
     });
+
 
     blue.on({
         "mousedown": function () {
