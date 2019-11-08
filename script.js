@@ -89,8 +89,7 @@ $(document).ready(function () {
     }
 
     red.on({
-        "mousedown": function () {
-        alert("Test");
+        "mousedown": function () {        
         startTxtR.css('display', 'none');
         red.css('box-shadow', '10px 0px 7px -5px rgba(0,0,0,0.4)');
         wrapR.css('display', 'block').delay(150);
