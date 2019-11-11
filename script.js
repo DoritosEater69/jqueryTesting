@@ -26,6 +26,21 @@ $(document).ready(function () {
     var topOffset = stickyDiv.offsetTop;
     scrollChild.stop();
 
+    var carousel = $(".carousel");
+
+    var bootstrap_icon = $("#bootstrap");
+    var atom_icon = $("#atom");
+    var android_icon = $("#android");
+    var store_icon = $("#store");
+
+
+    carousel.bind('mousewheel', function (wheelEvent) {
+        if (wheelEvent.originalEvent.deltaY > 0) {
+            $(this).carousel('next');
+        } else {
+            $(this).carousel('prev');
+        }
+    });
 
     window.onscroll = function addSticky() {
         if (window.pageYOffset >= topOffset) {
@@ -89,40 +104,41 @@ $(document).ready(function () {
     }
 
     red.on({
-        "mousedown": function () {        
-        startTxtR.css('display', 'none');
-        red.css('box-shadow', '10px 0px 7px -5px rgba(0,0,0,0.4)');
-        wrapR.css('display', 'block').delay(150);
-        red.animate({
-            opacity: 1.0,
-            height: '600px',
-        });        
+        "mousedown": function () {
+            startTxtR.css('display', 'none');
+            red.css('box-shadow', '10px 0px 7px -5px rgba(0,0,0,0.4)');
+            wrapR.css('display', 'block').delay(150);
+            red.animate({
+                opacity: 1.0,
+                height: '600px',
+            });
 
-        wrapR.animate({
-            opacity: 1.0,
-            fontSize: '66px',
-            color: '#FFFFFF',
-            fontWeight: 'bold',
-        });
-            
-    }, "mouseup": function(){
-        startTxtR.delay(360).show(0);
+            wrapR.animate({
+                opacity: 1.0,
+                fontSize: '66px',
+                color: '#FFFFFF',
+                fontWeight: 'bold',
+            });
 
-        red.animate({
-            opacity: 0.5,
-            height: '950px',
-        });
-
-        wrapR.animate({
-            opacity: 0.0,
-            fontSize: '16px',
-        });
-        startTxtR.delay(200).animate({
-            opacity: 1.0,
-        });
-    
         },
-        
+        "mouseup": function () {
+            startTxtR.delay(360).show(0);
+
+            red.animate({
+                opacity: 0.5,
+                height: '950px',
+            });
+
+            wrapR.animate({
+                opacity: 0.0,
+                fontSize: '16px',
+            });
+            startTxtR.delay(200).animate({
+                opacity: 1.0,
+            });
+
+        },
+
     });
 
 
@@ -186,6 +202,62 @@ $(document).ready(function () {
                 top: "0",
             });
         },
+    });
+
+    bootstrap_icon.mouseover(function () {
+        bootstrap_icon.animate({
+            color: "red",
+            fontSize: "3em",
+        });
+    });
+
+    bootstrap_icon.mouseout(function () {
+        bootstrap_icon.animate({
+            color: "white",
+            fontSize: "6em",
+        });
+    });
+
+    atom_icon.mouseover(function () {
+        atom_icon.animate({
+            color: "red",
+            fontSize: "3em",
+        });
+    });
+
+    atom_icon.mouseout(function () {
+        atom_icon.animate({
+            color: "white",
+            fontSize: "6em",
+        });
+    });
+
+    store_icon.mouseover(function () {
+        store_icon.animate({
+            color: "red",
+            fontSize: "3em",
+        });
+    });
+
+    store_icon.mouseout(function () {
+        store_icon.animate({
+            color: "white",
+            fontSize: "6em",
+        });
+    });
+
+    android_icon.mouseover(function () {
+        android_icon.animate({
+            color: "red",
+            fontSize: "3em",
+        });
+    });
+
+    android_icon.mouseout(function () {
+        android_icon.animate({
+            color: "white",
+            fontSize: "6em",
+        });
     });
 
 });
