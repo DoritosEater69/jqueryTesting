@@ -28,10 +28,10 @@ $(document).ready(function () {
 
     var carousel = $(".carousel");
 
-    var bootstrap_icon = $("#bootstrap");
-    var atom_icon = $("#atom");
-    var android_icon = $("#android");
-    var store_icon = $("#store");
+    var bootstrap_container = $("#bootstrap");
+    var atom_container = $("#atom");
+    var android_container = $("#android");
+    var store_container = $("#store");
 
 
     carousel.bind('mousewheel', function (wheelEvent) {
@@ -204,60 +204,79 @@ $(document).ready(function () {
         },
     });
 
-    bootstrap_icon.mouseover(function () {
-        bootstrap_icon.animate({
+    bootstrap_container.mouseover(function () {
+        $(".fa-bootstrap").stop();
+        $(".fa-bootstrap").css("boxShadow", "-1px 16px 12px -8px rgba(0,0,0,0.74");
+        $(".fa-bootstrap").animate({
             color: "red",
-            fontSize: "3em",
+            fontSize: "3em",            
         });
     });
 
-    bootstrap_icon.mouseout(function () {
-        bootstrap_icon.animate({
+    bootstrap_container.mouseout(function () {
+        android_container.stop();
+        store_container.stop();
+        bootstrap_container.stop();
+        atom_container.stop();
+        $(".fa-bootstrap").stop();
+        $(".fa-bootstrap").animate({
             color: "white",
             fontSize: "6em",
         });
     });
 
-    atom_icon.mouseover(function () {
-        atom_icon.animate({
+    atom_container.mouseover(function () {
+        $("fa-atom").animate({
             color: "red",
             fontSize: "3em",
         });
     });
 
-    atom_icon.mouseout(function () {
-        atom_icon.animate({
+    atom_container.mouseout(function () {
+        android_container.stop();
+        store_container.stop();
+        bootstrap_container.stop();
+        $(".fa-atom").stop();
+        $(".fa-atom").animate({
             color: "white",
             fontSize: "6em",
         });
     });
 
-    store_icon.mouseover(function () {
-        store_icon.animate({
+    store_container.mouseover(function () {
+        $(".fa-app-store-ios").animate({
             color: "red",
             fontSize: "3em",
         });
     });
 
-    store_icon.mouseout(function () {
-        store_icon.animate({
+    store_container.mouseout(function () {
+        $(".fa-android").stop();
+        store_container.stop();
+        bootstrap_container.stop();
+        atom_container.stop();
+       $(".fa-app-store-ios").animate({
             color: "white",
             fontSize: "6em",
         });
     });
 
-    android_icon.mouseover(function () {
-        android_icon.animate({
+    android_container.mouseover(function () {        
+        $(".fa-android").animate({
             color: "red",
             fontSize: "3em",
-        });
+        }, "fast");
     });
 
-    android_icon.mouseout(function () {
-        android_icon.animate({
+    android_container.mouseout(function () {
+        $(".fa-android").stop();
+        store_container.stop();
+        bootstrap_container.stop();
+        atom_container.stop();
+        $(".fa-android").animate({
             color: "white",
             fontSize: "6em",
-        });
+        }, "fast");
     });
 
 });
