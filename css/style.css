@@ -5,12 +5,13 @@
     background-attachment: fixed;
 }
 
-.fab, .fas{
-    font-size: 65px;
-    color: white;        
+.fab,
+.fas {
+    font-size: 6em;
+    color: white;
 }
 
-.rndBordered{
+.rndBordered {
     border-right: 1px solid white;
     border-left: 1px solid white;
     border-left-width: 50%;
@@ -19,8 +20,8 @@
     margin-top: 20px;
 }
 
-.subheader-White{
-    color: #FFFFFF;   
+.subheader-White {
+    color: #FFFFFF;
     font-size: 2em;
     font-style: bold;
 }
@@ -43,7 +44,7 @@
 }
 
 .stickyAdd {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     right: 0;
     width: 100%;

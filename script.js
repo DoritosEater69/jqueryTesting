@@ -34,6 +34,9 @@ $(document).ready(function () {
     var store_container = $("#store");
 
 
+    var shrink = $("#shrinkDiv");
+    var shrinkTxt = $(".shrinkTxt");
+
     carousel.bind('mousewheel', function (wheelEvent) {
         if (wheelEvent.originalEvent.deltaY > 0) {
             $(this).carousel('next');
@@ -93,12 +96,28 @@ $(document).ready(function () {
         }
 
         var test = overTakeBar.offsetTop;
-        if (window.pageYOffset >= test && test >= topOffset) {
+        if (window.pageYOffset >= test) {
             stickyDiv.classList.remove("stickyAdd");
+            shrink.animate({
+                height: "200px",
+                top: "0",
+            }, "slow");
+
+            shrinkTxt.animate({
+                height: "100px",
+                paddingTop: "20px",
+                top: "0",
+            }, "slow");
+
             overTakeBar.classList.add("stickyAdd");
+
         }
-        if (window.pageYOffset <= test && test <= topOffset) {
-            stickyDiv.classList.add("stickyAdd");
+        if (window.pageYOffset == test) {            
+            shrinkTxt.animate({
+                height: "100%",
+                top: "0",
+            });
+            shrinkTxt.stop();
             overTakeBar.classList.remove("stickyAdd");
         }
     }
@@ -206,10 +225,8 @@ $(document).ready(function () {
 
     bootstrap_container.mouseover(function () {
         $(".fa-bootstrap").stop();
-        $(".fa-bootstrap").css("boxShadow", "-1px 16px 12px -8px rgba(0,0,0,0.74");
         $(".fa-bootstrap").animate({
-            color: "red",
-            fontSize: "3em",            
+            fontSize: "10em",
         });
     });
 
@@ -226,9 +243,9 @@ $(document).ready(function () {
     });
 
     atom_container.mouseover(function () {
-        $("fa-atom").animate({
-            color: "red",
-            fontSize: "3em",
+        $(".fa-atom").stop();
+        $(".fa-atom").animate({
+            fontSize: "10em",
         });
     });
 
@@ -236,6 +253,7 @@ $(document).ready(function () {
         android_container.stop();
         store_container.stop();
         bootstrap_container.stop();
+        atom_container.stop();
         $(".fa-atom").stop();
         $(".fa-atom").animate({
             color: "white",
@@ -244,39 +262,42 @@ $(document).ready(function () {
     });
 
     store_container.mouseover(function () {
+        $(".fa-app-store-ios").stop();
         $(".fa-app-store-ios").animate({
-            color: "red",
-            fontSize: "3em",
+            fontSize: "10em",
         });
     });
 
     store_container.mouseout(function () {
-        $(".fa-android").stop();
+        android_container.stop();
         store_container.stop();
         bootstrap_container.stop();
         atom_container.stop();
-       $(".fa-app-store-ios").animate({
+        $(".fa-app-store-ios").stop();
+        $(".fa-app-store-ios").animate({
             color: "white",
             fontSize: "6em",
         });
     });
 
-    android_container.mouseover(function () {        
+    android_container.mouseover(function () {
+        $(".fa-android").stop();
         $(".fa-android").animate({
-            color: "red",
-            fontSize: "3em",
-        }, "fast");
+            fontSize: "10em",
+        });
     });
 
     android_container.mouseout(function () {
-        $(".fa-android").stop();
+        android_container.stop();
         store_container.stop();
         bootstrap_container.stop();
         atom_container.stop();
+        $(".fa-android").stop();
         $(".fa-android").animate({
             color: "white",
             fontSize: "6em",
-        }, "fast");
+        });
     });
+
 
 });
